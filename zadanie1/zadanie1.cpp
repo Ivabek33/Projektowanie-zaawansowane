@@ -33,6 +33,19 @@ public:
         }
     }
 
+    // Dodawanie elementu na końcu listy
+    void insertAtEnd(int value) {
+        Node* newNode = new Node(value); // Tworzenie nowego węzła
+        if (tail == nullptr) {           // Jeśli lista jest pusta
+            head = tail = newNode;       // Head i tail wskazują na nowy węzeł
+        }
+        else {
+            tail->next = newNode;        // Ostatni węzeł wskazuje na nowy węzeł
+            newNode->prev = tail;        // Nowy węzeł wskazuje na stary tail
+            tail = newNode;              // Aktualizacja tail do nowego węzła
+        }
+    }
+
     // Wyświetlanie listy od początku
     void displayForward() {
         Node* temp = head;
@@ -51,6 +64,10 @@ int main() {
     list.insertAtBeginning(10);
     list.insertAtBeginning(20);
     list.insertAtBeginning(30);
+
+    // Dodawanie elementów na końcu listy
+    list.insertAtEnd(40);
+    list.insertAtEnd(50);
 
     // Wyświetlanie listy od początku
     std::cout << "Lista dwukierunkowa: ";
