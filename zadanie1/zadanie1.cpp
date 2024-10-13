@@ -55,6 +55,23 @@ public:
         }
         std::cout << "nullptr" << std::endl;
     }
+
+    // Usuwanie całej listy
+    void deleteList() {
+        Node* current = head;
+        while (current != nullptr) {
+            Node* next = current->next; // Zapisanie wskaźnika na następny węzeł
+            std::cout << "Usuwanie węzła o wartości: " << current->data << std::endl;
+            delete current;             // Zwalnianie obecnego węzła
+            current = next;             // Przechodzenie do następnego węzła
+        }
+        head = tail = nullptr;           // Resetowanie wskaźników po usunięciu listy
+    }
+
+    // Destruktor listy dwukierunkowej
+    ~DoublyLinkedList() {
+        deleteList(); // Usuwanie całej listy przy niszczeniu obiektu
+    }
 };
 
 int main() {
@@ -72,6 +89,10 @@ int main() {
     // Wyświetlanie listy od początku
     std::cout << "Lista dwukierunkowa: ";
     list.displayForward();
+
+    // Usuwanie całej listy
+    std::cout << "Usuwanie całej listy:" << std::endl;
+    list.deleteList();
 
     return 0;
 }
