@@ -108,6 +108,20 @@ public:
         delete temp;
     }
 
+    // Usuwanie elementu z końca listy
+    void deleteFromEnd() {
+        if (tail == nullptr) return; // Lista pusta
+        Node* temp = tail;
+        tail = tail->prev;
+        if (tail != nullptr) {
+            tail->next = nullptr;
+        }
+        else {
+            head = nullptr;
+        }
+        delete temp;
+    }
+
     // Destruktor listy dwukierunkowej
     ~DoublyLinkedList() {
         deleteList(); // Usuwanie całej listy przy niszczeniu obiektu
@@ -139,6 +153,11 @@ int main() {
     // Usuwanie elementu z początku listy 
     std::cout << "Usuwanie elementu z poczatku" << std::endl;
     list.deleteFromBeginning();
+    list.displayForward();
+
+    //Usuwanie elementu z końca listy 
+    std::cout << "Usuwanie elementu z konca:" << std::endl;
+    list.deleteFromEnd();
     list.displayForward();
 
     // Usuwanie całej listy
