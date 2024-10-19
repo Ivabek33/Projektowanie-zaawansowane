@@ -61,11 +61,37 @@ public:
         Node* current = head;
         while (current != nullptr) {
             Node* next = current->next; // Zapisanie wskaźnika na następny węzeł
-            std::cout << "Usuwanie węzła o wartości: " << current->data << std::endl;
+            std::cout << "Usuwanie wezla o wartości: " << current->data << std::endl;
             delete current;             // Zwalnianie obecnego węzła
             current = next;             // Przechodzenie do następnego węzła
         }
         head = tail = nullptr;           // Resetowanie wskaźników po usunięciu listy
+    }
+
+    // Dodawanie elementu pod wskazany indeks
+    void insertAtIndex(int value, int index) {
+        if (index == 0) {
+            insertAtBeginning(value);
+            return;
+        }
+
+        Node* newNode = new Node(value);
+        Node* temp = head;
+        for (int i = 0; i < index - 1 && temp != nullptr; ++i) {
+            temp = temp->next;
+        }
+
+        if (temp == nullptr || temp == tail) {
+            insertAtEnd(value);
+        }
+        else {
+            newNode->next = temp->next;
+            newNode->prev = temp;
+            if (temp->next != nullptr) {
+                temp->next->prev = newNode;
+            }
+            temp->next = newNode;
+        }
     }
 
     // Destruktor listy dwukierunkowej
@@ -78,20 +104,24 @@ int main() {
     DoublyLinkedList list;
 
     // Dodawanie elementów na początku listy
-    list.insertAtBeginning(10);
-    list.insertAtBeginning(20);
-    list.insertAtBeginning(30);
+    list.insertAtBeginning(33);
+    list.insertAtBeginning(27);
+    list.insertAtBeginning(14);
+    
 
     // Dodawanie elementów na końcu listy
-    list.insertAtEnd(40);
-    list.insertAtEnd(50);
+    list.insertAtEnd(99);
+    list.insertAtEnd(73);
+
+    // Dodawanie elemetu pod wskazany indeks
+    list.insertAtIndex(54, 2);
 
     // Wyświetlanie listy od początku
     std::cout << "Lista dwukierunkowa: ";
     list.displayForward();
 
     // Usuwanie całej listy
-    std::cout << "Usuwanie całej listy:" << std::endl;
+    std::cout << "Usuwanie calej listy:" << std::endl;
     list.deleteList();
 
     return 0;
