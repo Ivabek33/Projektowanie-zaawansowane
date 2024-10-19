@@ -122,6 +122,32 @@ public:
         delete temp;
     }
 
+    // Usuwanie elementu pod wskazanym indeksem
+    void deleteAtIndex(int index) {
+        if (index == 0) {
+            deleteFromBeginning();
+            return;
+        }
+
+        Node* temp = head;
+        for (int i = 0; i < index && temp != nullptr; ++i) {
+            temp = temp->next;
+        }
+
+        if (temp == nullptr) return; // Indeks poza zakresem
+
+        if (temp == tail) {
+            deleteFromEnd();
+        }
+        else {
+            temp->prev->next = temp->next;
+            if (temp->next != nullptr) {
+                temp->next->prev = temp->prev;
+            }
+            delete temp;
+        }
+    }
+
     // Destruktor listy dwukierunkowej
     ~DoublyLinkedList() {
         deleteList(); // Usuwanie całej listy przy niszczeniu obiektu
@@ -155,9 +181,14 @@ int main() {
     list.deleteFromBeginning();
     list.displayForward();
 
-    //Usuwanie elementu z końca listy 
+    // Usuwanie elementu z końca listy 
     std::cout << "Usuwanie elementu z konca:" << std::endl;
     list.deleteFromEnd();
+    list.displayForward();
+
+    // Usuwanie elementu z danego indexu
+    std::cout << "Usuwanie elementu z danego indeksu:" << std::endl;
+    list.deleteAtIndex(2);
     list.displayForward();
 
     // Usuwanie całej listy
