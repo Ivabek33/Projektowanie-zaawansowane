@@ -94,6 +94,20 @@ public:
         }
     }
 
+    // Usuwanie elementu z początku listy
+    void deleteFromBeginning() {
+        if (head == nullptr) return; // Lista pusta
+        Node* temp = head;
+        head = head->next;
+        if (head != nullptr) {
+            head->prev = nullptr;
+        }
+        else {
+            tail = nullptr;
+        }
+        delete temp;
+    }
+
     // Destruktor listy dwukierunkowej
     ~DoublyLinkedList() {
         deleteList(); // Usuwanie całej listy przy niszczeniu obiektu
@@ -116,8 +130,15 @@ int main() {
     // Dodawanie elemetu pod wskazany indeks
     list.insertAtIndex(54, 2);
 
+    
+
     // Wyświetlanie listy od początku
     std::cout << "Lista dwukierunkowa: ";
+    list.displayForward();
+
+    // Usuwanie elementu z początku listy 
+    std::cout << "Usuwanie elementu z poczatku" << std::endl;
+    list.deleteFromBeginning();
     list.displayForward();
 
     // Usuwanie całej listy
