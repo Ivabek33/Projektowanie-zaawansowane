@@ -25,7 +25,7 @@ jobs:
 
       # Krok 4: Wygenerowanie dokumentacji PDF z LaTeX
       - name: Generate PDF from LaTeX
-        working-directory: docs/latex
+        working-directory: ./docs/latex
         run: |
           pdflatex refman.tex
           pdflatex refman.tex  # Uruchomione dwa razy, aby zaktualizować odnośniki
