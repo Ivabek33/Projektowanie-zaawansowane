@@ -148,16 +148,6 @@ public:
         }
     }
 
-    // Wyświetlanie listy od końca
-    void displayBackward() {
-        Node* temp = tail;
-        while (temp != nullptr) {
-            std::cout << temp->data << " -> ";
-            temp = temp->prev;
-        }
-        std::cout << "nullptr" << std::endl;
-    }
-
     // Destruktor listy dwukierunkowej
     ~DoublyLinkedList() {
         deleteList(); // Usuwanie całej listy przy niszczeniu obiektu
@@ -200,10 +190,6 @@ int main() {
     std::cout << "Usuwanie elementu z danego indeksu:" << std::endl;
     list.deleteAtIndex(2);
     list.displayForward();
-
-    // Wyświetlanie listy od końca
-    std::cout << "Wyswietlanie listy od komca:" << std::endl;
-    list.displayBackward();
 
     // Usuwanie całej listy
     std::cout << "Usuwanie calej listy:" << std::endl;
