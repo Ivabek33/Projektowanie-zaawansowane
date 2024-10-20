@@ -1,0 +1,39 @@
+name: Generate Doxygen documentation
+
+on:
+  push:
+    branches:
+      - master  # Ustaw nazwę głównej gałęzi, np. "main" lub "master"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Krok 1: Pobranie kodu z repozytorium
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      # Krok 2: Instalacja Doxygen i pakietów LaTeX, w tym języka polskiego
+      - name: Install Doxygen and LaTeX
+        run: sudo apt-get install doxygen texlive-latex-base texlive-latex-recommended texlive-latex-extra texlive-fonts-recommended texlive-lang-polish
+
+      # Krok 3: Wygenerowanie dokumentacji Doxygen
+      - name: Generate Doxygen documentation
+        working-directory: "./zadanie1/"  # Przełącz się do katalogu, gdzie jest `Doxyfile`
+        run: doxygen Doxyfile
+
+      # Krok 4: Wygenerowanie dokumentacji PDF z LaTeX
+      - name: Generate PDF from LaTeX
+        working-directory: ./docs/latex
+        run: |
+          pdflatex refman.tex
+          pdflatex refman.tex  # Uruchomione dwa razy, aby zaktualizować odnośniki
+
+      # Krok 5: Wypchnięcie dokumentacji HTML i PDF na GitHub Pages
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          personal_token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+          publish_dir: ./docs  # Katalog z wygenerowaną dokumentacją
+          keep_files: true  # Zachowaj pliki takie jak .nojekyll
