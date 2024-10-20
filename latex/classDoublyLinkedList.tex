@@ -1,0 +1,394 @@
+\hypertarget{classDoublyLinkedList}{}\doxysection{Doubly\+Linked\+List Class Reference}
+\label{classDoublyLinkedList}\index{DoublyLinkedList@{DoublyLinkedList}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classDoublyLinkedList_a64b759ca82ca4b7767f42ba5691575f5}{Doubly\+Linked\+List}} ()
+\item 
+void \mbox{\hyperlink{classDoublyLinkedList_a536e2a23b00e45813698bc8cada71e22}{insert\+At\+Beginning}} (int value)
+\item 
+void \mbox{\hyperlink{classDoublyLinkedList_ab5e49cfaab56112afced682962b82529}{insert\+At\+End}} (int value)
+\item 
+void \mbox{\hyperlink{classDoublyLinkedList_a7160fb5eca85d2e9639d25ca77852f80}{display\+Forward}} ()
+\item 
+void \mbox{\hyperlink{classDoublyLinkedList_a74a1b33f799462590a0f4c117cab8fd9}{delete\+List}} ()
+\item 
+void \mbox{\hyperlink{classDoublyLinkedList_acc707f30961364c88884887871dd2f42}{insert\+At\+Index}} (int value, int index)
+\item 
+void \mbox{\hyperlink{classDoublyLinkedList_a74b03cc37b17732ab285485740239f0d}{delete\+From\+Beginning}} ()
+\item 
+void \mbox{\hyperlink{classDoublyLinkedList_a619f7a201d053dbb8530eee5168a4840}{delete\+From\+End}} ()
+\item 
+void \mbox{\hyperlink{classDoublyLinkedList_a41d0d15177dce31b6f77bbe243676558}{delete\+At\+Index}} (int index)
+\item 
+void \mbox{\hyperlink{classDoublyLinkedList_a6beacb719a4fe241c7f67b94f34e61e0}{display\+Backward}} ()
+\item 
+\mbox{\hyperlink{structNode}{Node}} $\ast$ \mbox{\hyperlink{classDoublyLinkedList_af881812276c829cd36a1bcd30c475846}{get\+Node\+At\+Index}} (int index)
+\item 
+void \mbox{\hyperlink{classDoublyLinkedList_a2d18c617b69f7f1c62147e64fce32aad}{display\+Next}} (\mbox{\hyperlink{structNode}{Node}} $\ast$node)
+\item 
+void \mbox{\hyperlink{classDoublyLinkedList_ab2098afe573a2d762391370a3d3c5974}{display\+Previous}} (\mbox{\hyperlink{structNode}{Node}} $\ast$node)
+\item 
+\mbox{\hyperlink{classDoublyLinkedList_abe3231c8ee3dd956b5261c4148102967}{$\sim$\+Doubly\+Linked\+List}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line 14 of file zadanie1.\+cpp.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classDoublyLinkedList_a64b759ca82ca4b7767f42ba5691575f5}\label{classDoublyLinkedList_a64b759ca82ca4b7767f42ba5691575f5}} 
+\index{DoublyLinkedList@{DoublyLinkedList}!DoublyLinkedList@{DoublyLinkedList}}
+\index{DoublyLinkedList@{DoublyLinkedList}!DoublyLinkedList@{DoublyLinkedList}}
+\doxysubsubsection{\texorpdfstring{DoublyLinkedList()}{DoublyLinkedList()}}
+{\footnotesize\ttfamily Doubly\+Linked\+List\+::\+Doubly\+Linked\+List (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 21 of file zadanie1.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{21 : head(\textcolor{keyword}{nullptr}), tail(\textcolor{keyword}{nullptr}) \{\}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classDoublyLinkedList_abe3231c8ee3dd956b5261c4148102967}\label{classDoublyLinkedList_abe3231c8ee3dd956b5261c4148102967}} 
+\index{DoublyLinkedList@{DoublyLinkedList}!````~DoublyLinkedList@{$\sim$DoublyLinkedList}}
+\index{````~DoublyLinkedList@{$\sim$DoublyLinkedList}!DoublyLinkedList@{DoublyLinkedList}}
+\doxysubsubsection{\texorpdfstring{$\sim$DoublyLinkedList()}{~DoublyLinkedList()}}
+{\footnotesize\ttfamily Doubly\+Linked\+List\+::$\sim$\+Doubly\+Linked\+List (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 191 of file zadanie1.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{191                         \{}
+\DoxyCodeLine{192         \mbox{\hyperlink{classDoublyLinkedList_a74a1b33f799462590a0f4c117cab8fd9}{deleteList}}(); \textcolor{comment}{// Usuwanie całej listy przy niszczeniu obiektu}}
+\DoxyCodeLine{193     \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classDoublyLinkedList_a41d0d15177dce31b6f77bbe243676558}\label{classDoublyLinkedList_a41d0d15177dce31b6f77bbe243676558}} 
+\index{DoublyLinkedList@{DoublyLinkedList}!deleteAtIndex@{deleteAtIndex}}
+\index{deleteAtIndex@{deleteAtIndex}!DoublyLinkedList@{DoublyLinkedList}}
+\doxysubsubsection{\texorpdfstring{deleteAtIndex()}{deleteAtIndex()}}
+{\footnotesize\ttfamily void Doubly\+Linked\+List\+::delete\+At\+Index (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 126 of file zadanie1.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{126                                   \{}
+\DoxyCodeLine{127         \textcolor{keywordflow}{if} (index == 0) \{}
+\DoxyCodeLine{128             \mbox{\hyperlink{classDoublyLinkedList_a74b03cc37b17732ab285485740239f0d}{deleteFromBeginning}}();}
+\DoxyCodeLine{129             \textcolor{keywordflow}{return};}
+\DoxyCodeLine{130         \}}
+\DoxyCodeLine{131 }
+\DoxyCodeLine{132         \mbox{\hyperlink{structNode}{Node}}* temp = head;}
+\DoxyCodeLine{133         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < index \&\& temp != \textcolor{keyword}{nullptr}; ++i) \{}
+\DoxyCodeLine{134             temp = temp-\/>\mbox{\hyperlink{structNode_a2559a716f69ccaa76d648d9f1b83065e}{next}};}
+\DoxyCodeLine{135         \}}
+\DoxyCodeLine{136 }
+\DoxyCodeLine{137         \textcolor{keywordflow}{if} (temp == \textcolor{keyword}{nullptr}) \textcolor{keywordflow}{return}; \textcolor{comment}{// Indeks poza zakresem}}
+\DoxyCodeLine{138 }
+\DoxyCodeLine{139         \textcolor{keywordflow}{if} (temp == tail) \{}
+\DoxyCodeLine{140             \mbox{\hyperlink{classDoublyLinkedList_a619f7a201d053dbb8530eee5168a4840}{deleteFromEnd}}();}
+\DoxyCodeLine{141         \}}
+\DoxyCodeLine{142         \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{143             temp-\/>\mbox{\hyperlink{structNode_a632ea91c6a13082308f7692649a68880}{prev}}-\/>\mbox{\hyperlink{structNode_a2559a716f69ccaa76d648d9f1b83065e}{next}} = temp-\/>\mbox{\hyperlink{structNode_a2559a716f69ccaa76d648d9f1b83065e}{next}};}
+\DoxyCodeLine{144             \textcolor{keywordflow}{if} (temp-\/>\mbox{\hyperlink{structNode_a2559a716f69ccaa76d648d9f1b83065e}{next}} != \textcolor{keyword}{nullptr}) \{}
+\DoxyCodeLine{145                 temp-\/>\mbox{\hyperlink{structNode_a2559a716f69ccaa76d648d9f1b83065e}{next}}-\/>\mbox{\hyperlink{structNode_a632ea91c6a13082308f7692649a68880}{prev}} = temp-\/>\mbox{\hyperlink{structNode_a632ea91c6a13082308f7692649a68880}{prev}};}
+\DoxyCodeLine{146             \}}
+\DoxyCodeLine{147             \textcolor{keyword}{delete} temp;}
+\DoxyCodeLine{148         \}}
+\DoxyCodeLine{149     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classDoublyLinkedList_a74b03cc37b17732ab285485740239f0d}\label{classDoublyLinkedList_a74b03cc37b17732ab285485740239f0d}} 
+\index{DoublyLinkedList@{DoublyLinkedList}!deleteFromBeginning@{deleteFromBeginning}}
+\index{deleteFromBeginning@{deleteFromBeginning}!DoublyLinkedList@{DoublyLinkedList}}
+\doxysubsubsection{\texorpdfstring{deleteFromBeginning()}{deleteFromBeginning()}}
+{\footnotesize\ttfamily void Doubly\+Linked\+List\+::delete\+From\+Beginning (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 98 of file zadanie1.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{98                                \{}
+\DoxyCodeLine{99         \textcolor{keywordflow}{if} (head == \textcolor{keyword}{nullptr}) \textcolor{keywordflow}{return}; \textcolor{comment}{// Lista pusta}}
+\DoxyCodeLine{100         \mbox{\hyperlink{structNode}{Node}}* temp = head;}
+\DoxyCodeLine{101         head = head-\/>\mbox{\hyperlink{structNode_a2559a716f69ccaa76d648d9f1b83065e}{next}};}
+\DoxyCodeLine{102         \textcolor{keywordflow}{if} (head != \textcolor{keyword}{nullptr}) \{}
+\DoxyCodeLine{103             head-\/>\mbox{\hyperlink{structNode_a632ea91c6a13082308f7692649a68880}{prev}} = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{104         \}}
+\DoxyCodeLine{105         \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{106             tail = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{107         \}}
+\DoxyCodeLine{108         \textcolor{keyword}{delete} temp;}
+\DoxyCodeLine{109     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classDoublyLinkedList_a619f7a201d053dbb8530eee5168a4840}\label{classDoublyLinkedList_a619f7a201d053dbb8530eee5168a4840}} 
+\index{DoublyLinkedList@{DoublyLinkedList}!deleteFromEnd@{deleteFromEnd}}
+\index{deleteFromEnd@{deleteFromEnd}!DoublyLinkedList@{DoublyLinkedList}}
+\doxysubsubsection{\texorpdfstring{deleteFromEnd()}{deleteFromEnd()}}
+{\footnotesize\ttfamily void Doubly\+Linked\+List\+::delete\+From\+End (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 112 of file zadanie1.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{112                          \{}
+\DoxyCodeLine{113         \textcolor{keywordflow}{if} (tail == \textcolor{keyword}{nullptr}) \textcolor{keywordflow}{return}; \textcolor{comment}{// Lista pusta}}
+\DoxyCodeLine{114         \mbox{\hyperlink{structNode}{Node}}* temp = tail;}
+\DoxyCodeLine{115         tail = tail-\/>\mbox{\hyperlink{structNode_a632ea91c6a13082308f7692649a68880}{prev}};}
+\DoxyCodeLine{116         \textcolor{keywordflow}{if} (tail != \textcolor{keyword}{nullptr}) \{}
+\DoxyCodeLine{117             tail-\/>\mbox{\hyperlink{structNode_a2559a716f69ccaa76d648d9f1b83065e}{next}} = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{118         \}}
+\DoxyCodeLine{119         \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{120             head = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{121         \}}
+\DoxyCodeLine{122         \textcolor{keyword}{delete} temp;}
+\DoxyCodeLine{123     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classDoublyLinkedList_a74a1b33f799462590a0f4c117cab8fd9}\label{classDoublyLinkedList_a74a1b33f799462590a0f4c117cab8fd9}} 
+\index{DoublyLinkedList@{DoublyLinkedList}!deleteList@{deleteList}}
+\index{deleteList@{deleteList}!DoublyLinkedList@{DoublyLinkedList}}
+\doxysubsubsection{\texorpdfstring{deleteList()}{deleteList()}}
+{\footnotesize\ttfamily void Doubly\+Linked\+List\+::delete\+List (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 60 of file zadanie1.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{60                       \{}
+\DoxyCodeLine{61         \mbox{\hyperlink{structNode}{Node}}* current = head;}
+\DoxyCodeLine{62         \textcolor{keywordflow}{while} (current != \textcolor{keyword}{nullptr}) \{}
+\DoxyCodeLine{63             \mbox{\hyperlink{structNode}{Node}}* next = current-\/>\mbox{\hyperlink{structNode_a2559a716f69ccaa76d648d9f1b83065e}{next}}; \textcolor{comment}{// Zapisanie wskaźnika na następny węzeł}}
+\DoxyCodeLine{64             std::cout << \textcolor{stringliteral}{"{}Usuwanie wezla o wartosci: "{}} << current-\/>\mbox{\hyperlink{structNode_a87c003c9f600e3fc58e6e90835f0b605}{data}} << std::endl;}
+\DoxyCodeLine{65             \textcolor{keyword}{delete} current;             \textcolor{comment}{// Zwalnianie obecnego węzła}}
+\DoxyCodeLine{66             current = next;             \textcolor{comment}{// Przechodzenie do następnego węzła}}
+\DoxyCodeLine{67         \}}
+\DoxyCodeLine{68         head = tail = \textcolor{keyword}{nullptr};           \textcolor{comment}{// Resetowanie wskaźników po usunięciu listy}}
+\DoxyCodeLine{69     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classDoublyLinkedList_a6beacb719a4fe241c7f67b94f34e61e0}\label{classDoublyLinkedList_a6beacb719a4fe241c7f67b94f34e61e0}} 
+\index{DoublyLinkedList@{DoublyLinkedList}!displayBackward@{displayBackward}}
+\index{displayBackward@{displayBackward}!DoublyLinkedList@{DoublyLinkedList}}
+\doxysubsubsection{\texorpdfstring{displayBackward()}{displayBackward()}}
+{\footnotesize\ttfamily void Doubly\+Linked\+List\+::display\+Backward (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 152 of file zadanie1.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{152                            \{}
+\DoxyCodeLine{153         \mbox{\hyperlink{structNode}{Node}}* temp = tail;}
+\DoxyCodeLine{154         \textcolor{keywordflow}{while} (temp != \textcolor{keyword}{nullptr}) \{}
+\DoxyCodeLine{155             std::cout << temp-\/>\mbox{\hyperlink{structNode_a87c003c9f600e3fc58e6e90835f0b605}{data}} << \textcolor{stringliteral}{"{} -\/> "{}};}
+\DoxyCodeLine{156             temp = temp-\/>\mbox{\hyperlink{structNode_a632ea91c6a13082308f7692649a68880}{prev}};}
+\DoxyCodeLine{157         \}}
+\DoxyCodeLine{158         std::cout << \textcolor{stringliteral}{"{}nullptr"{}} << std::endl;}
+\DoxyCodeLine{159     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classDoublyLinkedList_a7160fb5eca85d2e9639d25ca77852f80}\label{classDoublyLinkedList_a7160fb5eca85d2e9639d25ca77852f80}} 
+\index{DoublyLinkedList@{DoublyLinkedList}!displayForward@{displayForward}}
+\index{displayForward@{displayForward}!DoublyLinkedList@{DoublyLinkedList}}
+\doxysubsubsection{\texorpdfstring{displayForward()}{displayForward()}}
+{\footnotesize\ttfamily void Doubly\+Linked\+List\+::display\+Forward (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 50 of file zadanie1.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{50                           \{}
+\DoxyCodeLine{51         \mbox{\hyperlink{structNode}{Node}}* temp = head;}
+\DoxyCodeLine{52         \textcolor{keywordflow}{while} (temp != \textcolor{keyword}{nullptr}) \{}
+\DoxyCodeLine{53             std::cout << temp-\/>\mbox{\hyperlink{structNode_a87c003c9f600e3fc58e6e90835f0b605}{data}} << \textcolor{stringliteral}{"{} -\/> "{}};}
+\DoxyCodeLine{54             temp = temp-\/>\mbox{\hyperlink{structNode_a2559a716f69ccaa76d648d9f1b83065e}{next}};}
+\DoxyCodeLine{55         \}}
+\DoxyCodeLine{56         std::cout << \textcolor{stringliteral}{"{}nullptr"{}} << std::endl;}
+\DoxyCodeLine{57     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classDoublyLinkedList_a2d18c617b69f7f1c62147e64fce32aad}\label{classDoublyLinkedList_a2d18c617b69f7f1c62147e64fce32aad}} 
+\index{DoublyLinkedList@{DoublyLinkedList}!displayNext@{displayNext}}
+\index{displayNext@{displayNext}!DoublyLinkedList@{DoublyLinkedList}}
+\doxysubsubsection{\texorpdfstring{displayNext()}{displayNext()}}
+{\footnotesize\ttfamily void Doubly\+Linked\+List\+::display\+Next (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structNode}{Node}} $\ast$}]{node }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 171 of file zadanie1.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{171                                  \{}
+\DoxyCodeLine{172         \textcolor{keywordflow}{if} (node-\/>\mbox{\hyperlink{structNode_a2559a716f69ccaa76d648d9f1b83065e}{next}} != \textcolor{keyword}{nullptr}) \{}
+\DoxyCodeLine{173             std::cout << \textcolor{stringliteral}{"{}Nastepny element: "{}} << node-\/>\mbox{\hyperlink{structNode_a2559a716f69ccaa76d648d9f1b83065e}{next}}-\/>\mbox{\hyperlink{structNode_a87c003c9f600e3fc58e6e90835f0b605}{data}} << std::endl;}
+\DoxyCodeLine{174         \}}
+\DoxyCodeLine{175         \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{176             std::cout << \textcolor{stringliteral}{"{}Brak nastepnego elementu."{}} << std::endl;}
+\DoxyCodeLine{177         \}}
+\DoxyCodeLine{178     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classDoublyLinkedList_ab2098afe573a2d762391370a3d3c5974}\label{classDoublyLinkedList_ab2098afe573a2d762391370a3d3c5974}} 
+\index{DoublyLinkedList@{DoublyLinkedList}!displayPrevious@{displayPrevious}}
+\index{displayPrevious@{displayPrevious}!DoublyLinkedList@{DoublyLinkedList}}
+\doxysubsubsection{\texorpdfstring{displayPrevious()}{displayPrevious()}}
+{\footnotesize\ttfamily void Doubly\+Linked\+List\+::display\+Previous (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structNode}{Node}} $\ast$}]{node }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 181 of file zadanie1.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{181                                      \{}
+\DoxyCodeLine{182         \textcolor{keywordflow}{if} (node-\/>\mbox{\hyperlink{structNode_a632ea91c6a13082308f7692649a68880}{prev}} != \textcolor{keyword}{nullptr}) \{}
+\DoxyCodeLine{183             std::cout << \textcolor{stringliteral}{"{}Poprzedni element: "{}} << node-\/>\mbox{\hyperlink{structNode_a632ea91c6a13082308f7692649a68880}{prev}}-\/>\mbox{\hyperlink{structNode_a87c003c9f600e3fc58e6e90835f0b605}{data}} << std::endl;}
+\DoxyCodeLine{184         \}}
+\DoxyCodeLine{185         \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{186             std::cout << \textcolor{stringliteral}{"{}Brak poprzedniego elementu."{}} << std::endl;}
+\DoxyCodeLine{187         \}}
+\DoxyCodeLine{188     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classDoublyLinkedList_af881812276c829cd36a1bcd30c475846}\label{classDoublyLinkedList_af881812276c829cd36a1bcd30c475846}} 
+\index{DoublyLinkedList@{DoublyLinkedList}!getNodeAtIndex@{getNodeAtIndex}}
+\index{getNodeAtIndex@{getNodeAtIndex}!DoublyLinkedList@{DoublyLinkedList}}
+\doxysubsubsection{\texorpdfstring{getNodeAtIndex()}{getNodeAtIndex()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structNode}{Node}}$\ast$ Doubly\+Linked\+List\+::get\+Node\+At\+Index (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 162 of file zadanie1.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{162                                     \{}
+\DoxyCodeLine{163         \mbox{\hyperlink{structNode}{Node}}* temp = head;}
+\DoxyCodeLine{164         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < index \&\& temp != \textcolor{keyword}{nullptr}; ++i) \{}
+\DoxyCodeLine{165             temp = temp-\/>\mbox{\hyperlink{structNode_a2559a716f69ccaa76d648d9f1b83065e}{next}};}
+\DoxyCodeLine{166         \}}
+\DoxyCodeLine{167         \textcolor{keywordflow}{return} temp; \textcolor{comment}{// Zwraca wskaźnik na węzeł lub nullptr, jeśli indeks poza zakresem}}
+\DoxyCodeLine{168     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classDoublyLinkedList_a536e2a23b00e45813698bc8cada71e22}\label{classDoublyLinkedList_a536e2a23b00e45813698bc8cada71e22}} 
+\index{DoublyLinkedList@{DoublyLinkedList}!insertAtBeginning@{insertAtBeginning}}
+\index{insertAtBeginning@{insertAtBeginning}!DoublyLinkedList@{DoublyLinkedList}}
+\doxysubsubsection{\texorpdfstring{insertAtBeginning()}{insertAtBeginning()}}
+{\footnotesize\ttfamily void Doubly\+Linked\+List\+::insert\+At\+Beginning (\begin{DoxyParamCaption}\item[{int}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 24 of file zadanie1.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{24                                       \{}
+\DoxyCodeLine{25         \mbox{\hyperlink{structNode}{Node}}* newNode = \textcolor{keyword}{new} \mbox{\hyperlink{structNode}{Node}}(value); \textcolor{comment}{// Tworzenie nowego węzła}}
+\DoxyCodeLine{26         \textcolor{keywordflow}{if} (head == \textcolor{keyword}{nullptr}) \{           \textcolor{comment}{// Jeśli lista jest pusta}}
+\DoxyCodeLine{27             head = tail = newNode;       \textcolor{comment}{// Head i tail wskazują na nowy węzeł}}
+\DoxyCodeLine{28         \}}
+\DoxyCodeLine{29         \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{30             newNode-\/>\mbox{\hyperlink{structNode_a2559a716f69ccaa76d648d9f1b83065e}{next}} = head;        \textcolor{comment}{// Nowy węzeł wskazuje na obecny head}}
+\DoxyCodeLine{31             head-\/>\mbox{\hyperlink{structNode_a632ea91c6a13082308f7692649a68880}{prev}} = newNode;        \textcolor{comment}{// Obecny head wskazuje na nowy węzeł jako prev}}
+\DoxyCodeLine{32             head = newNode;              \textcolor{comment}{// Aktualizacja head do nowego węzła}}
+\DoxyCodeLine{33         \}}
+\DoxyCodeLine{34     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classDoublyLinkedList_ab5e49cfaab56112afced682962b82529}\label{classDoublyLinkedList_ab5e49cfaab56112afced682962b82529}} 
+\index{DoublyLinkedList@{DoublyLinkedList}!insertAtEnd@{insertAtEnd}}
+\index{insertAtEnd@{insertAtEnd}!DoublyLinkedList@{DoublyLinkedList}}
+\doxysubsubsection{\texorpdfstring{insertAtEnd()}{insertAtEnd()}}
+{\footnotesize\ttfamily void Doubly\+Linked\+List\+::insert\+At\+End (\begin{DoxyParamCaption}\item[{int}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 37 of file zadanie1.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{37                                 \{}
+\DoxyCodeLine{38         \mbox{\hyperlink{structNode}{Node}}* newNode = \textcolor{keyword}{new} \mbox{\hyperlink{structNode}{Node}}(value); \textcolor{comment}{// Tworzenie nowego węzła}}
+\DoxyCodeLine{39         \textcolor{keywordflow}{if} (tail == \textcolor{keyword}{nullptr}) \{           \textcolor{comment}{// Jeśli lista jest pusta}}
+\DoxyCodeLine{40             head = tail = newNode;       \textcolor{comment}{// Head i tail wskazują na nowy węzeł}}
+\DoxyCodeLine{41         \}}
+\DoxyCodeLine{42         \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{43             tail-\/>\mbox{\hyperlink{structNode_a2559a716f69ccaa76d648d9f1b83065e}{next}} = newNode;        \textcolor{comment}{// Ostatni węzeł wskazuje na nowy węzeł}}
+\DoxyCodeLine{44             newNode-\/>\mbox{\hyperlink{structNode_a632ea91c6a13082308f7692649a68880}{prev}} = tail;        \textcolor{comment}{// Nowy węzeł wskazuje na stary tail}}
+\DoxyCodeLine{45             tail = newNode;              \textcolor{comment}{// Aktualizacja tail do nowego węzła}}
+\DoxyCodeLine{46         \}}
+\DoxyCodeLine{47     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classDoublyLinkedList_acc707f30961364c88884887871dd2f42}\label{classDoublyLinkedList_acc707f30961364c88884887871dd2f42}} 
+\index{DoublyLinkedList@{DoublyLinkedList}!insertAtIndex@{insertAtIndex}}
+\index{insertAtIndex@{insertAtIndex}!DoublyLinkedList@{DoublyLinkedList}}
+\doxysubsubsection{\texorpdfstring{insertAtIndex()}{insertAtIndex()}}
+{\footnotesize\ttfamily void Doubly\+Linked\+List\+::insert\+At\+Index (\begin{DoxyParamCaption}\item[{int}]{value,  }\item[{int}]{index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 72 of file zadanie1.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{72                                              \{}
+\DoxyCodeLine{73         \textcolor{keywordflow}{if} (index == 0) \{}
+\DoxyCodeLine{74             \mbox{\hyperlink{classDoublyLinkedList_a536e2a23b00e45813698bc8cada71e22}{insertAtBeginning}}(value);}
+\DoxyCodeLine{75             \textcolor{keywordflow}{return};}
+\DoxyCodeLine{76         \}}
+\DoxyCodeLine{77 }
+\DoxyCodeLine{78         \mbox{\hyperlink{structNode}{Node}}* newNode = \textcolor{keyword}{new} \mbox{\hyperlink{structNode}{Node}}(value);}
+\DoxyCodeLine{79         \mbox{\hyperlink{structNode}{Node}}* temp = head;}
+\DoxyCodeLine{80         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < index -\/ 1 \&\& temp != \textcolor{keyword}{nullptr}; ++i) \{}
+\DoxyCodeLine{81             temp = temp-\/>\mbox{\hyperlink{structNode_a2559a716f69ccaa76d648d9f1b83065e}{next}};}
+\DoxyCodeLine{82         \}}
+\DoxyCodeLine{83 }
+\DoxyCodeLine{84         \textcolor{keywordflow}{if} (temp == \textcolor{keyword}{nullptr} || temp == tail) \{}
+\DoxyCodeLine{85             \mbox{\hyperlink{classDoublyLinkedList_ab5e49cfaab56112afced682962b82529}{insertAtEnd}}(value);}
+\DoxyCodeLine{86         \}}
+\DoxyCodeLine{87         \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{88             newNode-\/>\mbox{\hyperlink{structNode_a2559a716f69ccaa76d648d9f1b83065e}{next}} = temp-\/>\mbox{\hyperlink{structNode_a2559a716f69ccaa76d648d9f1b83065e}{next}};}
+\DoxyCodeLine{89             newNode-\/>\mbox{\hyperlink{structNode_a632ea91c6a13082308f7692649a68880}{prev}} = temp;}
+\DoxyCodeLine{90             \textcolor{keywordflow}{if} (temp-\/>\mbox{\hyperlink{structNode_a2559a716f69ccaa76d648d9f1b83065e}{next}} != \textcolor{keyword}{nullptr}) \{}
+\DoxyCodeLine{91                 temp-\/>\mbox{\hyperlink{structNode_a2559a716f69ccaa76d648d9f1b83065e}{next}}-\/>\mbox{\hyperlink{structNode_a632ea91c6a13082308f7692649a68880}{prev}} = newNode;}
+\DoxyCodeLine{92             \}}
+\DoxyCodeLine{93             temp-\/>\mbox{\hyperlink{structNode_a2559a716f69ccaa76d648d9f1b83065e}{next}} = newNode;}
+\DoxyCodeLine{94         \}}
+\DoxyCodeLine{95     \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{zadanie1_8cpp}{zadanie1.\+cpp}}\end{DoxyCompactItemize}

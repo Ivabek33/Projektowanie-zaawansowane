@@ -1,0 +1,87 @@
+\hypertarget{zadanie1_8cpp}{}\doxysection{zadanie1.\+cpp File Reference}
+\label{zadanie1_8cpp}\index{zadanie1.cpp@{zadanie1.cpp}}
+{\ttfamily \#include $<$iostream$>$}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structNode}{Node}}
+\item 
+class \mbox{\hyperlink{classDoublyLinkedList}{Doubly\+Linked\+List}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{zadanie1_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{zadanie1_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{zadanie1_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+\index{zadanie1.cpp@{zadanie1.cpp}!main@{main}}
+\index{main@{main}!zadanie1.cpp@{zadanie1.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 197 of file zadanie1.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{197            \{}
+\DoxyCodeLine{198     \mbox{\hyperlink{classDoublyLinkedList}{DoublyLinkedList}} list;}
+\DoxyCodeLine{199 }
+\DoxyCodeLine{200     \textcolor{comment}{// Dodawanie elementów na początku listy}}
+\DoxyCodeLine{201     list.\mbox{\hyperlink{classDoublyLinkedList_a536e2a23b00e45813698bc8cada71e22}{insertAtBeginning}}(33);}
+\DoxyCodeLine{202     list.\mbox{\hyperlink{classDoublyLinkedList_a536e2a23b00e45813698bc8cada71e22}{insertAtBeginning}}(27);}
+\DoxyCodeLine{203     list.\mbox{\hyperlink{classDoublyLinkedList_a536e2a23b00e45813698bc8cada71e22}{insertAtBeginning}}(14);}
+\DoxyCodeLine{204 }
+\DoxyCodeLine{205 }
+\DoxyCodeLine{206     \textcolor{comment}{// Dodawanie elementów na końcu listy}}
+\DoxyCodeLine{207     list.\mbox{\hyperlink{classDoublyLinkedList_ab5e49cfaab56112afced682962b82529}{insertAtEnd}}(99);}
+\DoxyCodeLine{208     list.\mbox{\hyperlink{classDoublyLinkedList_ab5e49cfaab56112afced682962b82529}{insertAtEnd}}(73);}
+\DoxyCodeLine{209 }
+\DoxyCodeLine{210     \textcolor{comment}{// Dodawanie elemetu pod wskazany indeks}}
+\DoxyCodeLine{211     list.\mbox{\hyperlink{classDoublyLinkedList_acc707f30961364c88884887871dd2f42}{insertAtIndex}}(54, 2);}
+\DoxyCodeLine{212 }
+\DoxyCodeLine{213     \textcolor{comment}{// Wyświetlanie listy od początku}}
+\DoxyCodeLine{214     std::cout << \textcolor{stringliteral}{"{}Lista dwukierunkowa: "{}};}
+\DoxyCodeLine{215     list.\mbox{\hyperlink{classDoublyLinkedList_a7160fb5eca85d2e9639d25ca77852f80}{displayForward}}();}
+\DoxyCodeLine{216 }
+\DoxyCodeLine{217     \textcolor{comment}{// Test funkcji displayNext oraz displayPrevious}}
+\DoxyCodeLine{218     \mbox{\hyperlink{structNode}{Node}}* nodeAtIndex1 = list.\mbox{\hyperlink{classDoublyLinkedList_af881812276c829cd36a1bcd30c475846}{getNodeAtIndex}}(1); \textcolor{comment}{// Pobieramy węzeł o indeksie 1}}
+\DoxyCodeLine{219     \textcolor{keywordflow}{if} (nodeAtIndex1 != \textcolor{keyword}{nullptr}) \{}
+\DoxyCodeLine{220         std::cout << \textcolor{stringliteral}{"{}Wywolanie funkcji displayNext dla wezla o indeksie 1 (wartosc: "{}} << nodeAtIndex1-\/>\mbox{\hyperlink{structNode_a87c003c9f600e3fc58e6e90835f0b605}{data}} << \textcolor{stringliteral}{"{}):"{}} << std::endl;}
+\DoxyCodeLine{221         list.\mbox{\hyperlink{classDoublyLinkedList_a2d18c617b69f7f1c62147e64fce32aad}{displayNext}}(nodeAtIndex1); \textcolor{comment}{// Wyświetla następny element po węźle}}
+\DoxyCodeLine{222 }
+\DoxyCodeLine{223         std::cout << \textcolor{stringliteral}{"{}Wywolanie funkcji displayPrevious dla wezla o indeksie 1 (wartosc: "{}} << nodeAtIndex1-\/>\mbox{\hyperlink{structNode_a87c003c9f600e3fc58e6e90835f0b605}{data}} << \textcolor{stringliteral}{"{}):"{}} << std::endl;}
+\DoxyCodeLine{224         list.\mbox{\hyperlink{classDoublyLinkedList_ab2098afe573a2d762391370a3d3c5974}{displayPrevious}}(nodeAtIndex1); \textcolor{comment}{// Wyświetla poprzedni element przed węzłem}}
+\DoxyCodeLine{225     \}}
+\DoxyCodeLine{226 }
+\DoxyCodeLine{227     \textcolor{comment}{// Usuwanie elementu z początku listy }}
+\DoxyCodeLine{228     std::cout << \textcolor{stringliteral}{"{}Usuwanie elementu z poczatku"{}} << std::endl;}
+\DoxyCodeLine{229     list.\mbox{\hyperlink{classDoublyLinkedList_a74b03cc37b17732ab285485740239f0d}{deleteFromBeginning}}();}
+\DoxyCodeLine{230     list.\mbox{\hyperlink{classDoublyLinkedList_a7160fb5eca85d2e9639d25ca77852f80}{displayForward}}();}
+\DoxyCodeLine{231 }
+\DoxyCodeLine{232     \textcolor{comment}{// Usuwanie elementu z końca listy }}
+\DoxyCodeLine{233     std::cout << \textcolor{stringliteral}{"{}Usuwanie elementu z konca:"{}} << std::endl;}
+\DoxyCodeLine{234     list.\mbox{\hyperlink{classDoublyLinkedList_a619f7a201d053dbb8530eee5168a4840}{deleteFromEnd}}();}
+\DoxyCodeLine{235     list.\mbox{\hyperlink{classDoublyLinkedList_a7160fb5eca85d2e9639d25ca77852f80}{displayForward}}();}
+\DoxyCodeLine{236 }
+\DoxyCodeLine{237     \textcolor{comment}{// Usuwanie elementu z danego indexu}}
+\DoxyCodeLine{238     std::cout << \textcolor{stringliteral}{"{}Usuwanie elementu z danego indeksu:"{}} << std::endl;}
+\DoxyCodeLine{239     list.\mbox{\hyperlink{classDoublyLinkedList_a41d0d15177dce31b6f77bbe243676558}{deleteAtIndex}}(2);}
+\DoxyCodeLine{240     list.\mbox{\hyperlink{classDoublyLinkedList_a7160fb5eca85d2e9639d25ca77852f80}{displayForward}}();}
+\DoxyCodeLine{241 }
+\DoxyCodeLine{242     \textcolor{comment}{// Wyświetlanie listy od końca}}
+\DoxyCodeLine{243     std::cout << \textcolor{stringliteral}{"{}Wyswietlanie listy od komca:"{}} << std::endl;}
+\DoxyCodeLine{244     list.\mbox{\hyperlink{classDoublyLinkedList_a6beacb719a4fe241c7f67b94f34e61e0}{displayBackward}}();}
+\DoxyCodeLine{245 }
+\DoxyCodeLine{246     \textcolor{comment}{// Usuwanie całej listy}}
+\DoxyCodeLine{247     std::cout << \textcolor{stringliteral}{"{}Usuwanie calej listy:"{}} << std::endl;}
+\DoxyCodeLine{248     list.\mbox{\hyperlink{classDoublyLinkedList_a74a1b33f799462590a0f4c117cab8fd9}{deleteList}}();}
+\DoxyCodeLine{249 }
+\DoxyCodeLine{250     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{251 \}}
+
+\end{DoxyCode}
