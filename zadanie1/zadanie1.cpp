@@ -61,7 +61,7 @@ public:
         Node* current = head;
         while (current != nullptr) {
             Node* next = current->next; // Zapisanie wskaźnika na następny węzeł
-            std::cout << "Usuwanie wezla o wartości: " << current->data << std::endl;
+            std::cout << "Usuwanie wezla o wartosci: " << current->data << std::endl;
             delete current;             // Zwalnianie obecnego węzła
             current = next;             // Przechodzenie do następnego węzła
         }
@@ -148,10 +148,50 @@ public:
         }
     }
 
+    // Wyświetlanie listy od końca
+    void displayBackward() {
+        Node* temp = tail;
+        while (temp != nullptr) {
+            std::cout << temp->data << " -> ";
+            temp = temp->prev;
+        }
+        std::cout << "nullptr" << std::endl;
+    }
+
+    // Zwraca wskaźnik na węzeł o danym indeksie
+    Node* getNodeAtIndex(int index) {
+        Node* temp = head;
+        for (int i = 0; i < index && temp != nullptr; ++i) {
+            temp = temp->next;
+        }
+        return temp; // Zwraca wskaźnik na węzeł lub nullptr, jeśli indeks poza zakresem
+    }
+
+    // Wyświetlanie następnego elementu dla danego węzła
+    void displayNext(Node* node) {
+        if (node->next != nullptr) {
+            std::cout << "Nastepny element: " << node->next->data << std::endl;
+        }
+        else {
+            std::cout << "Brak nastepnego elementu." << std::endl;
+        }
+    }
+
+    // Wyświetlanie poprzedniego elementu dla danego węzła
+    void displayPrevious(Node* node) {
+        if (node->prev != nullptr) {
+            std::cout << "Poprzedni element: " << node->prev->data << std::endl;
+        }
+        else {
+            std::cout << "Brak poprzedniego elementu." << std::endl;
+        }
+    }
+
     // Destruktor listy dwukierunkowej
     ~DoublyLinkedList() {
         deleteList(); // Usuwanie całej listy przy niszczeniu obiektu
     }
+
 };
 
 int main() {
@@ -161,7 +201,7 @@ int main() {
     list.insertAtBeginning(33);
     list.insertAtBeginning(27);
     list.insertAtBeginning(14);
-    
+
 
     // Dodawanie elementów na końcu listy
     list.insertAtEnd(99);
@@ -170,11 +210,19 @@ int main() {
     // Dodawanie elemetu pod wskazany indeks
     list.insertAtIndex(54, 2);
 
-    
-
     // Wyświetlanie listy od początku
     std::cout << "Lista dwukierunkowa: ";
     list.displayForward();
+
+    // Test funkcji displayNext oraz displayPrevious
+    Node* nodeAtIndex1 = list.getNodeAtIndex(1); // Pobieramy węzeł o indeksie 1
+    if (nodeAtIndex1 != nullptr) {
+        std::cout << "Wywolanie funkcji displayNext dla wezla o indeksie 1 (wartosc: " << nodeAtIndex1->data << "):" << std::endl;
+        list.displayNext(nodeAtIndex1); // Wyświetla następny element po węźle
+
+        std::cout << "Wywolanie funkcji displayPrevious dla wezla o indeksie 1 (wartosc: " << nodeAtIndex1->data << "):" << std::endl;
+        list.displayPrevious(nodeAtIndex1); // Wyświetla poprzedni element przed węzłem
+    }
 
     // Usuwanie elementu z początku listy 
     std::cout << "Usuwanie elementu z poczatku" << std::endl;
@@ -190,6 +238,10 @@ int main() {
     std::cout << "Usuwanie elementu z danego indeksu:" << std::endl;
     list.deleteAtIndex(2);
     list.displayForward();
+
+    // Wyświetlanie listy od końca
+    std::cout << "Wyswietlanie listy od komca:" << std::endl;
+    list.displayBackward();
 
     // Usuwanie całej listy
     std::cout << "Usuwanie calej listy:" << std::endl;
